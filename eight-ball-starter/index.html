@@ -90,11 +90,19 @@
             <p id="greeting" class="greeting">Hello!</p>
             <p id="questionOut" class="question-out">Your question will appear here.</p>
 
-            <div class="ball">
-              <div class="window">
-                <p id="answer" class="answer">8</p>
-              </div>
-            </div>
+           <div class="ball" id="ball">
+  <!-- Default 8 Side -->
+  <div id="eightCircle" class="eight-circle">
+    <span>8</span>
+  </div>
+
+  <!-- Secret Triangle Window (hidden by default using Bootstrap's d-none class) -->
+  <div id="window" class="window d-none">
+    <div class="triangle">
+      <p id="answer" class="answer"></p>
+    </div>
+  </div>
+</div>
 
             <div id="answerType" class="answer-type mt-4"></div>
           </div>
