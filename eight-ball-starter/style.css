@@ -1,0 +1,170 @@
+/* ==========================================
+   Magic 8 Ball: starter styles
+   Change these colors and fonts to match your theme.
+   ========================================== */
+
+:root {
+  --brand: #3b2a6b;        /* navbar, hero, button */
+  --brand-light: #ece8f6;  /* page background */
+  --accent: #f4b942;       /* step numbers, highlights */
+  --text: #1f1d2b;
+  --font: "Poppins", Arial, sans-serif;
+}
+
+body {
+  font-family: var(--font);
+  background: var(--brand-light);
+  color: var(--text);
+}
+
+/* ---------- Navbar ---------- */
+.site-nav {
+  background: var(--brand);
+}
+
+.site-nav .navbar-brand {
+  color: #fff;
+  font-weight: 700;
+}
+
+.nav-tagline {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.9rem;
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  background: var(--brand);
+  color: #fff;
+  padding: 3rem 0 4rem;
+}
+
+.hero h1 {
+  font-weight: 700;
+}
+
+/* ---------- How It Works ---------- */
+.section-title {
+  font-weight: 600;
+}
+
+.step-card {
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+}
+
+.step-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: var(--text);
+  font-weight: 700;
+}
+
+/* ---------- Main cards ---------- */
+.main-card {
+  border: none;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+.form-label {
+  font-weight: 600;
+}
+
+.btn-ask {
+  background: var(--brand);
+  color: #fff;
+  font-weight: 600;
+  padding: 0.75rem;
+  border-radius: 10px;
+}
+
+.btn-ask:hover,
+.btn-ask:focus-visible {
+  background: var(--accent);
+  color: var(--text);
+}
+
+.btn-ask:active,
+.btn-ask:focus {
+  background: var(--brand);
+  color: #fff;
+}
+
+/* ---------- Results ---------- */
+.greeting {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.question-out {
+  min-height: 1.5rem;
+  color: #555;
+}
+
+.ball {
+  width: 240px;
+  height: 240px;
+  margin: 1.5rem auto 0;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #4a4a4a, #111 65%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+}
+
+.window {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  background: #1b2a6b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px;
+}
+
+.answer {
+  margin: 0;
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.95rem;
+  line-height: 1.25;
+}
+
+/* ---------- Answer type badges ----------
+   Your innerHTML can use these classes. */
+.answer-type span {
+  display: inline-block;
+  padding: 0.4rem 1.25rem;
+  border-radius: 999px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #fff;
+}
+
+.yes {
+  background: #2e7d32;
+}
+
+.maybe {
+  background: #b26a00;
+}
+
+.no {
+  background: #c62828;
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+  background: var(--brand);
+  color: rgba(255, 255, 255, 0.8);
+}
