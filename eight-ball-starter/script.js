@@ -34,7 +34,7 @@ document.getElementById('greeting').textContent = greeting
 if (userQuestion === ""){
 document.getElementById('questionOut').textContent =''
 document.getElementById('answer').textContent ='The 8 Ball needs a question you idiot!!!'
-document.getElementById('amswerType').innerHTML = ''
+document.getElementById('answerType').innerHTML = ''
 return
 }
 
