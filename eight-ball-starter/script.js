@@ -42,10 +42,47 @@ return
 
 
 //get a random number
-
+let randomNumber = Math.floor(Math.random() * 8);
 
 //get magic 8balls answer
+let eightBall = "";
+  let type = "";
 
-//show the 8ball answer type badge
-
+  switch (randomNumber) {
+    case 0:
+      eightBall = "It is certain.";
+      type = "Positive";
+      break;
+    case 1:
+      eightBall = "It is decidedly so.";
+      type = "Positive";
+      break;
+    case 2:
+      eightBall = "Without a doubt.";
+      type = "Positive";
+      break;
+    case 3:
+      eightBall = "Reply hazy, try again.";
+      type = "Neutral";
+      break;
+    case 4:
+      eightBall = "Ask again later.";
+      type = "Neutral";
+      break;
+    case 5:
+      eightBall = "Don't count on it.";
+      type = "Negative";
+      break;
+    case 6:
+      eightBall = "My reply is no.";
+      type = "Negative";
+      break;
+    case 7:
+      eightBall = "Very doubtful.";
+      type = "Negative";
+      break;
+  }
+  // 6. Output the results to the page
+  document.getElementById('answer').textContent = eightBall;
+  document.getElementById('answerType').textContent = "Answer Type: " + type;
 }
