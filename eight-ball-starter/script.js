@@ -11,13 +11,11 @@ let userQuestion = document.getElementById('questionInput').value
 
 console.log(userName,userQuestion);
 
-
 // Show the Question on the site
-
-if(userQuestion === "") {
-document.getElementById('questionOut').textContent = "you asked: " + userQuestion;
-}else{
-document.getElementById('questionOut').textContent = "The 8 Ball needs a question to work idiot!!!"
+if (userQuestion !== "") {
+  document.getElementById('questionOut').textContent = "you asked: " + userQuestion;
+} else {
+  document.getElementById('questionOut').textContent = "The 8 Ball needs a question to work idiot!!!";
 }
 //Greet User
 let greeting
@@ -57,28 +55,36 @@ let eightBall = "";
       eightBall = "It is decidedly so.";
       type = "Positive";
       break;
-    case 2:
-      eightBall = "Without a doubt.";
+          case 2:
+      eightBall = "Hell yeah!!!";
       type = "Positive";
       break;
     case 3:
+      eightBall = "Without a doubt.";
+      type = "Positive";
+      break;
+    case 4:
       eightBall = "Reply hazy, try again.";
       type = "Neutral";
       break;
-    case 4:
+    case 5:
       eightBall = "Ask again later.";
       type = "Neutral";
       break;
-    case 5:
+    case 6:
       eightBall = "Don't count on it.";
       type = "Negative";
       break;
-    case 6:
+    case 7:
       eightBall = "My reply is no.";
       type = "Negative";
       break;
-    case 7:
+    case 8:
       eightBall = "Very doubtful.";
+      type = "Negative";
+      break;
+      case 9:
+      eightBall = "nah.";
       type = "Negative";
       break;
   }
