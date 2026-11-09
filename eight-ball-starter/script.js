@@ -1,7 +1,8 @@
 /*
   Magic 8 Ball
 */
-
+  let emptyClickCount = 0;
+  
 function askEightBall() {
   // 1. Get DOM elements and input values
   const nameInput = document.getElementById('nameInput').value.trim();
@@ -13,6 +14,8 @@ function askEightBall() {
   const answerEl = document.getElementById('answer');
   const answerTypeEl = document.getElementById('answerType');
   const ballEl = document.getElementById('ball');
+
+
 
   // 2. Set User Greeting
   if (nameInput === "") {
@@ -34,8 +37,27 @@ function askEightBall() {
     eightCircleEl.classList.add('d-none');
     windowEl.classList.remove('d-none');
     
-    answerEl.textContent = "The 8 Ball needs a question, idiot!";
-    answerTypeEl.innerHTML = `<span class="no">Error</span>`;
+   if (emptyClickCount) === 1 {
+      answerEl.textContent = "The 8 Ball needs a question, idiot!";
+      answerTypeEl.innerHTML = `<span class="no">Warning 1</span>`;
+    } else if (emptyClickCount === 2) {
+      answerEl.textContent = "I said... type a question FIRST!";
+      answerTypeEl.innerHTML = `<span class="no">Warning 2</span>`;
+    } else if (emptyClickCount === 3) {
+      answerEl.textContent = "Are you doing this on purpose?!";
+      answerTypeEl.innerHTML = `<span class="no">Getting Mad</span>`;
+    } else if (emptyClickCount === 4) {
+      answerEl.textContent = "STOP SPAMMING ME!";
+      answerTypeEl.innerHTML = `<span class="no">RAGE</span>`;
+    } else {
+
+      answerEl.textContent = "THAT'S IT! YOU BROKE ME!";
+      answerTypeEl.innerHTML = `<span class="no">CRASH OUT!</span>`;
+
+
+      document.body.classList.add('crash-out', 'crash-shake');
+    }
+
     return;
   }
 
@@ -117,4 +139,7 @@ function askEightBall() {
   // 8. Output results to screen
   answerEl.textContent = eightBall;
   answerTypeEl.innerHTML = `<span class="${typeClass}">${type}</span>`;
+  // If they asked a valid question, reset the anger level & remove screen shake!
+  emptyClickCount = 0;
+  document.body.classList.remove('crash-out', 'crash-shake');
 }

@@ -305,4 +305,30 @@ body {
   word-wrap: break-word;
   text-shadow: 0 0 4px rgba(255, 255, 255, 0.4);
 }
+/* the violent shake animation below */
 
+body.crash-out {
+  background-color: #8b0000 !important;
+  color: #ffffff !important;
+  transition: background-color 0.2s ease-in-out;
+}
+
+body.crash-out .card, 
+body.crash-out #ball {
+  border-color: #ff0000 !important;
+  box-shadow: 0 0 35px #ff0000 !important;
+}
+
+/* Violent Full Screen Shake */
+.crash-shake {
+  animation: violentShake 0.1 linear infinite;
+}
+
+@keyframes violentShake {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  20% { transform: translate(-12px, 8px) rotate(-3deg); }
+  40% { transform: translate(12px, -8px) rotate(3deg); }
+  60% { transform: translate(-15px, -5px) rotate(-4deg); }
+  80% { transform: translate(15px, 10px) rotate(4deg); }
+  100% { transform: translate(0, 0) rotate(0deg); }
+}
