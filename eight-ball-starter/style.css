@@ -121,6 +121,20 @@ body {
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
 }
 
+/* this is for the center 8 ball with the number 8 */
+.eight-circle {
+  width: 150px;
+  height: 150px;
+  margin: 1.rem auto 0;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #FFFF, #FFFF 65%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+    font-size: 60px;
+}
+
 .window {
   width: 130px;
   height: 130px;
@@ -140,8 +154,7 @@ body {
   line-height: 1.25;
 }
 
-/* ---------- Answer type badges ----------
-   Your innerHTML can use these classes. */
+
 .answer-type span {
   display: inline-block;
   padding: 0.4rem 1.25rem;
@@ -168,7 +181,8 @@ body {
   background: var(--brand);
   color: rgba(255, 255, 255, 0.8);
 }
-/* Dark purple liquid window background */
+
+
 .window {
   width: 140px;
   height: 140px;
@@ -182,7 +196,7 @@ body {
   overflow: hidden;
 }
 
-/* Inverted floating triangle die */
+
 .triangle {
   width: 100px;
   height: 90px;
@@ -197,7 +211,6 @@ body {
   animation: float 3s ease-in-out infinite;
 }
 
-/* Triangle text styling */
 .answer {
   margin: 0;
   color: #d1d8ff;
