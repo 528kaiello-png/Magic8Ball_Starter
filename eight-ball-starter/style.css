@@ -509,10 +509,19 @@ body.crash-out .card::before,
 }
 
 /* 7. FULLSCREEN CRT OVERLAY & STROBE LAYERS */
-.crash-crt-overlay {
+
+/* Hide overlay elements by default */
+.crash-crt-overlay,
+.crash-strobe-layer {
+  display: none;
+  pointer-events: none;
   position: fixed;
   inset: 0;
-  pointer-events: none;
+}
+
+/* Activate CRT Overlay when crashing out */
+body.crash-out .crash-crt-overlay {
+  display: block;
   z-index: 9999;
   background: 
     linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.4) 50%),
@@ -522,14 +531,13 @@ body.crash-out .card::before,
   animation: crtFlicker 0.03s infinite;
 }
 
-.crash-strobe-layer {
-  position: fixed;
-  inset: 0;
+/* Activate Strobe Layer when crashing out */
+body.crash-out .crash-strobe-layer {
+  display: block;
+  z-index: 9998;
   background: radial-gradient(circle, #ffffff 0%, #ff0000 80%);
   mix-blend-mode: color-dodge;
   opacity: 0;
-  pointer-events: none;
-  z-index: 9998;
   animation: violentStrobe 0.12s infinite steps(2);
 }
 
