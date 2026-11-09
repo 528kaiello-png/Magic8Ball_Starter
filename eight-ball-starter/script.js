@@ -68,31 +68,43 @@ function askEightBall() {
       type = "Positive";
       typeClass = "yes";
       break;
-    case 3:
+
+       case 3:
+      eightBall = "HELL YEAH!!!";
+      type = "Positive";
+      typeClass = "yes";
+      break;
+    case 4:
       eightBall = "Reply hazy, try again.";
       type = "Neutral";
       typeClass = "maybe";
       break;
-    case 4:
+    case 5:
       eightBall = "Ask again later.";
       type = "Neutral";
       typeClass = "maybe";
       break;
-    case 5:
+    case 6:
       eightBall = "Don't count on it.";
       type = "Negative";
       typeClass = "no";
       break;
-    case 6:
+    case 7:
       eightBall = "My reply is no.";
       type = "Negative";
       typeClass = "no";
       break;
-    case 7:
+    case 8:
       eightBall = "Very doubtful.";
       type = "Negative";
       typeClass = "no";
       break;
+
+    case 9:
+    eightball = "Hell Naw man.";
+    type = "Negative";
+    typeClass = "no";
+    break;
   }
 
   // 8. Output results to screen
