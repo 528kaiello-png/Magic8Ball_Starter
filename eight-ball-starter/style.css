@@ -123,8 +123,8 @@ body {
 
 /* this is for the center 8 ball with the number 8 */
 .eight-circle {
-  width: 150px;
-  height: 150px;
+  width: 120px;
+  height: 120px;
   margin: 1.rem auto 0;
   border-radius: 50%;
   background: radial-gradient(circle at 35% 30%, #FFFF, #FFFF 65%);
