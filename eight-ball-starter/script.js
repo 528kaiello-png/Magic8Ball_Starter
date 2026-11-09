@@ -1,8 +1,8 @@
 /*
   Magic 8 Ball
 */
-  let emptyClickCount = 0;
-  
+let emptyClickCount = 0;
+
 function askEightBall() {
   // 1. Get DOM elements and input values
   const nameInput = document.getElementById('nameInput').value.trim();
@@ -14,8 +14,6 @@ function askEightBall() {
   const answerEl = document.getElementById('answer');
   const answerTypeEl = document.getElementById('answerType');
   const ballEl = document.getElementById('ball');
-
-
 
   // 2. Set User Greeting
   if (nameInput === "") {
@@ -32,12 +30,14 @@ function askEightBall() {
 
   // 4. Handle Empty Question Case
   if (userQuestion === "") {
+    emptyClickCount++; // Increment empty click count
     questionOutEl.textContent = "";
+    
     // Show window with error message
     eightCircleEl.classList.add('d-none');
     windowEl.classList.remove('d-none');
-    
-   if (emptyClickCount) === 1 {
+
+    if (emptyClickCount === 1) {
       answerEl.textContent = "The 8 Ball needs a question, idiot!";
       answerTypeEl.innerHTML = `<span class="no">Warning 1</span>`;
     } else if (emptyClickCount === 2) {
@@ -50,10 +50,8 @@ function askEightBall() {
       answerEl.textContent = "STOP SPAMMING ME!";
       answerTypeEl.innerHTML = `<span class="no">RAGE</span>`;
     } else {
-
       answerEl.textContent = "THAT'S IT! YOU BROKE ME!";
       answerTypeEl.innerHTML = `<span class="no">CRASH OUT!</span>`;
-
 
       document.body.classList.add('crash-out', 'crash-shake');
     }
@@ -68,8 +66,8 @@ function askEightBall() {
   eightCircleEl.classList.add('d-none');
   windowEl.classList.remove('d-none');
 
-  // 7. Pick a Random Response
-  const randomNumber = Math.floor(Math.random() * 8);
+  // 7. Pick a Random Response (11 total options from index 0 to 10)
+  const randomNumber = Math.floor(Math.random() * 11);
   let eightBall = "";
   let type = "";
   let typeClass = "";
@@ -90,8 +88,7 @@ function askEightBall() {
       type = "Positive";
       typeClass = "yes";
       break;
-
-       case 3:
+    case 3:
       eightBall = "HELL YEAH!!!";
       type = "Positive";
       typeClass = "yes";
@@ -101,13 +98,11 @@ function askEightBall() {
       type = "Neutral";
       typeClass = "maybe";
       break;
-
-       case 5:
+    case 5:
       eightBall = "I don't really feel like answering it now ask later.";
       type = "Neutral";
       typeClass = "maybe";
       break;
-
     case 6:
       eightBall = "Ask again later.";
       type = "Neutral";
@@ -128,18 +123,18 @@ function askEightBall() {
       type = "Negative";
       typeClass = "no";
       break;
-
     case 10:
-    eightball = "Hell Naw man.";
-    type = "Negative";
-    typeClass = "no";
-    break;
+      eightBall = "Hell Naw man.";
+      type = "Negative";
+      typeClass = "no";
+      break;
   }
 
   // 8. Output results to screen
   answerEl.textContent = eightBall;
   answerTypeEl.innerHTML = `<span class="${typeClass}">${type}</span>`;
-  // If they asked a valid question, reset the anger level & remove screen shake!
+
+  // If they asked a valid question, reset the anger level & remove screen shake
   emptyClickCount = 0;
   document.body.classList.remove('crash-out', 'crash-shake');
 }
