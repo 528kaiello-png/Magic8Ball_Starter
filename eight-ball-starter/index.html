@@ -112,6 +112,29 @@
     </div>
   </main>
 
+<!-- CRT & Strobe Screen Layers -->
+<div class="crash-crt-overlay"></div>
+<div class="crash-strobe-layer"></div>
+
+<!-- Hidden Liquid Warp Filter -->
+<svg style="display: none;">
+  <defs>
+    <filter id="crash-fluid-warp">
+      <feTurbulence type="fractalNoise" baseFrequency="0.05 0.95" numOctaves="2" result="noise">
+        <animate attributeName="baseFrequency" dur="0.1s" values="0.02 0.8;0.1 0.3;0.05 0.95" repeatCount="indefinite"/>
+      </feTurbulence>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="45" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+  </defs>
+</svg>
+
+<!-- Example Element using Text Shatter & Chromatic Split -->
+<h1 class="crash-text-shatter crash-chromatic" data-text="CRASH OUT">CRASH OUT</h1>
+
+
+
+
+
   <!-- ============ FOOTER ============ -->
   <footer class="site-footer py-4 text-center">
     <div class="container">

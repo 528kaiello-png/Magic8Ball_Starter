@@ -68,7 +68,7 @@ function askEightBall() {
       answerEl.textContent = "STOP SPAMMING ME!";
       answerTypeEl.innerHTML = `<span class="no">RAGE</span>`;
     } else {
-      answerEl.textContent = "THAT'S IT! YOU BROKE ME!";
+      answerEl.textContent = "YOU IDIOT LOOK WHAT YOU HAVE DONE!!!";
       answerTypeEl.innerHTML = `<span class="no">CRASH OUT!</span>`;
 
       document.body.classList.add('crash-out', 'crash-shake');
