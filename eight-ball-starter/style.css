@@ -305,30 +305,69 @@ body {
   word-wrap: break-word;
   text-shadow: 0 0 4px rgba(255, 255, 255, 0.4);
 }
-/* the violent shake animation below */
-
 body.crash-out {
   background-color: #8b0000 !important;
   color: #ffffff !important;
   transition: background-color 0.2s ease-in-out;
+  overflow: hidden; /* Prevents scrollbars during violent screen displacement */
 }
 
 body.crash-out .card, 
 body.crash-out #ball {
   border-color: #ff0000 !important;
-  box-shadow: 0 0 35px #ff0000 !important;
+  box-shadow: 0 0 35px #ff0000, inset 0 0 15px #ff0000 !important;
 }
 
-/* Violent Full Screen Shake */
+/* Apply main shake to container and child elements for unified chaos */
 .crash-shake {
-  animation: violentShake 0.1 linear infinite;
+  animation: terrifyingShake 0.07s linear infinite;
+  will-change: transform, filter;
 }
 
-@keyframes violentShake {
-  0% { transform: translate(0, 0) rotate(0deg); }
-  20% { transform: translate(-12px, 8px) rotate(-3deg); }
-  40% { transform: translate(12px, -8px) rotate(3deg); }
-  60% { transform: translate(-15px, -5px) rotate(-4deg); }
-  80% { transform: translate(15px, 10px) rotate(4deg); }
-  100% { transform: translate(0, 0) rotate(0deg); }
+/* Gives inner elements an independent micro-twitch for maximum horror */
+.crash-shake * {
+  animation: childGlitch 0.05s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+/* Full Screen Distortion & Glitch Keyframes */
+@keyframes terrifyingShake {
+  0% { 
+    transform: translate(0, 0) rotate(0deg) scale(1) skew(0deg); 
+    filter: contrast(100%); 
+  }
+  15% { 
+    transform: translate(-22px, 14px) rotate(-5deg) scale(1.03) skew(-4deg); 
+    filter: contrast(170%) drop-shadow(0 0 15px #ff0000); 
+  }
+  30% { 
+    transform: translate(20px, -18px) rotate(6deg) scale(0.97) skew(5deg); 
+    filter: contrast(120%); 
+  }
+  45% { 
+    transform: translate(-26px, -10px) rotate(-7deg) scale(1.05) skew(-6deg); 
+    filter: contrast(220%) hue-rotate(-20deg); 
+  }
+  60% { 
+    transform: translate(24px, 16px) rotate(5deg) scale(0.96) skew(3deg); 
+    filter: contrast(140%); 
+  }
+  75% { 
+    transform: translate(-14px, -20px) rotate(-4deg) scale(1.04) skew(-5deg); 
+    filter: contrast(190%) invert(8%); 
+  }
+  90% { 
+    transform: translate(28px, -6px) rotate(8deg) scale(1.02) skew(6deg); 
+  }
+  100% { 
+    transform: translate(0, 0) rotate(0deg) scale(1) skew(0deg); 
+    filter: contrast(100%); 
+  }
+}
+
+/* Staggered sub-element twitching */
+@keyframes childGlitch {
+  0% { transform: translate(3px, -2px) rotate(1deg); }
+  50% { transform: translate(-4px, 3px) rotate(-1.5deg); }
+  100% { transform: translate(2px, 2px) rotate(0.5deg); }
 }
