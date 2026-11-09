@@ -73,6 +73,32 @@ body {
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
 }
 
+.label-card {
+ border: 20px solid #966F33;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  background-color: #305A4A;
+   position: relative; 
+  
+}
+/* Adds circles into the corners to make the pockets of a pool table */
+.label-card::after {
+  content: "";
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  right: -20px;
+  bottom: -20px;
+  border-radius: 16px; 
+  pointer-events: none;
+  background: 
+    radial-gradient(circle 8px at 8px 8px, #000 100%, transparent 100%),
+    radial-gradient(circle 8px at right 8px top 8px, #000 100%, transparent 100%),
+    radial-gradient(circle 8px at left 8px bottom 8px, #000 100%, transparent 100%),
+    radial-gradient(circle 8px at right 8px bottom 8px, #000 100%, transparent 100%);
+  background-repeat: no-repeat;
+}
+
 .form-label {
   font-weight: 600;
 }
@@ -94,7 +120,7 @@ body {
 .btn-ask:active,
 .btn-ask:focus {
   background: var(--brand);
-  color: #fff;
+  color: #FFF;
 }
 
 /* ---------- Results ---------- */
