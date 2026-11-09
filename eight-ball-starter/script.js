@@ -79,28 +79,35 @@ function askEightBall() {
       type = "Neutral";
       typeClass = "maybe";
       break;
-    case 5:
+
+       case 5:
+      eightBall = "I don't really feel like answering it now ask later.";
+      type = "Neutral";
+      typeClass = "maybe";
+      break;
+
+    case 6:
       eightBall = "Ask again later.";
       type = "Neutral";
       typeClass = "maybe";
       break;
-    case 6:
+    case 7:
       eightBall = "Don't count on it.";
       type = "Negative";
       typeClass = "no";
       break;
-    case 7:
+    case 8:
       eightBall = "My reply is no.";
       type = "Negative";
       typeClass = "no";
       break;
-    case 8:
+    case 9:
       eightBall = "Very doubtful.";
       type = "Negative";
       typeClass = "no";
       break;
 
-    case 9:
+    case 10:
     eightball = "Hell Naw man.";
     type = "Negative";
     typeClass = "no";
