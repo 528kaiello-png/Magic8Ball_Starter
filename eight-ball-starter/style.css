@@ -59,17 +59,80 @@ body {
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
 }
 
-.step-number {
+/* Base Pool Ball Styling */
+.step-number,
+.step-number2,
+.step-number3 {
+  position: relative;
+  isolation: isolate;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 36px;
-  height: 36px;
+  width: 42px;
+  height: 42px;
   border-radius: 50%;
-  background: var(--accent);
-  color: var(--text);
-  font-weight: 700;
+  font-family: Arial, sans-serif;
+  font-weight: 800;
+  font-size: 16px;
+  color: #111; /* Pool ball numbers are always black on the white center circle */
+  box-shadow: 
+    inset -4px -4px 8px rgba(0, 0, 0, 0.6),  /* Deep 3D shadow on bottom-right */
+    inset 2px 2px 4px rgba(255, 255, 255, 0.6),/* Specular highlight on top-left */
+    0 5px 10px rgba(0, 0, 0, 0.4);            /* Drop shadow on floor */
+  user-select: none;
 }
+
+.step-number::before,
+.step-number2::before,
+.step-number3::before {
+  content: "";
+  position: absolute;
+  width: 52%;
+  height: 52%;
+  background: #ffffff;
+  border-radius: 50%;
+  z-index: -1; /* Sits behind text, in front of ball background */
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+/* Glossy Surface Shine Overlay */
+.step-number::after,
+.step-number2::after,
+.step-number3::after {
+  content: "";
+  position: absolute;
+  top: 8%;
+  left: 18%;
+  width: 64%;
+  height: 35%;
+  border-radius: 50%;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.65) 0%, rgba(255, 255, 255, 0) 100%);
+  pointer-events: none;
+}
+
+/* 1-Ball (Yellow) */
+.step-number {
+  background: radial-gradient(circle at 35% 35%, #fff176 0%, #ffd700 50%, #b29600 100%);
+}
+
+/* 2-Ball (Blue) */
+.step-number2 {
+  background: radial-gradient(circle at 35% 35%, #5c6bc0 0%, #0000ff 50%, #00007f 100%);
+}
+
+/* 3-Ball (Red) */
+.step-number3 {
+  background: radial-gradient(circle at 35% 35%, #ef5350 0%, #ff0000 50%, #800000 100%);
+}
+
+
+
+
+
+
+
+
+
 
 /* ---------- Main cards ---------- */
 .main-card {
@@ -422,7 +485,7 @@ body.crash-out #ball {
 
 /* 4. SCREEN TEARING & HORIZONTAL SLICE MATRIX */
 .crash-tear {
-  animation: screenTear 0.09s steps(1) infinite;
+  animation: screenTear 0.09s -s(1) infinite;
 }
 
 @keyframes screenTear {
