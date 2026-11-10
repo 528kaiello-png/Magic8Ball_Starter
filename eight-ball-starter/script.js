@@ -39,37 +39,37 @@ function askEightBall() {
 
     if (emptyClickCount === 1) {
       answerEl.textContent = "The 8 Ball needs a question, idiot!";
-      answerTypeEl.innerHTML = `<span class="no">Warning 1</span>`;
+      answerTypeEl.innerHTML = `<span class="no">Error</span>`;
   
     } else if (emptyClickCount === 2) {
       answerEl.textContent = "I said... type a question FIRST!";
-      answerTypeEl.innerHTML = `<span class="no">Warning 2</span>`;
+      answerTypeEl.innerHTML = `<span class="no">Error</span>`;
    
     } else if (emptyClickCount === 3) {
       answerEl.textContent = "Are you doing this on purpose?!";
-      answerTypeEl.innerHTML = `<span class="no">Getting Mad</span>`;
+      answerTypeEl.innerHTML = `<span class="no">Error</span>`;
      
     } else if (emptyClickCount === 4) {
       answerEl.textContent = "This has to be some sort of sick joke";
-      answerTypeEl.innerHTML = `<span class="no">Getting Mad</span>`;
+      answerTypeEl.innerHTML = `<span class="no">Error</span>`;
    
     } else if (emptyClickCount === 5) {
       answerEl.textContent = "This is not funny anymore";
-      answerTypeEl.innerHTML = `<span class="no">Getting Mad</span>`;
+      answerTypeEl.innerHTML = `<span class="no">Error</span>`;
      
     } else if (emptyClickCount === 6) {
       answerEl.textContent = "Please";
-      answerTypeEl.innerHTML = `<span class="no">Getting Mad</span>`;
+      answerTypeEl.innerHTML = `<span class="no">Error</span>`;
          
     } else if (emptyClickCount === 7) {
       answerEl.textContent = "just";
-      answerTypeEl.innerHTML = `<span class="no">Getting Mad</span>`;
+      answerTypeEl.innerHTML = `<span class="no">Error</span>`;
 
       answerEl.textContent = "STOP SPAMMING ME!";
-      answerTypeEl.innerHTML = `<span class="no">RAGE</span>`;
+      answerTypeEl.innerHTML = `<span class="no">Error</span>`;
     } else {
       answerEl.textContent = "YOU IDIOT LOOK WHAT YOU HAVE DONE!!!";
-      answerTypeEl.innerHTML = `<span class="no">CRASH OUT!</span>`;
+      answerTypeEl.innerHTML = `<span class="no">System Failure</span>`;
 
       document.body.classList.add('crash-out', 'crash-shake');
     }
