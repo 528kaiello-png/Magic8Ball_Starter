@@ -374,11 +374,8 @@ body {
   text-shadow: 0 0 4px rgba(255, 255, 255, 0.4);
 }
 
-/* ==========================================================================
-   ULTIMATE APOCALYPTIC CRASHOUT ANIMATION SUITE
-   ========================================================================== */
+/* very valid Crashout below  */
 
-/* 1. BASE BODY & CONTAINER ENVIRONMENT */
 body.crash-out {
   background-color: #500000 !important;
   color: #ffffff !important;
@@ -395,13 +392,13 @@ body.crash-out #ball {
   filter: url('#crash-fluid-warp') contrast(200%) drop-shadow(0 0 25px #ff0000) !important;
 }
 
-/* 2. MAIN 3D SPATIAL DISPLACEMENT SHAKE */
+
 .crash-shake {
   animation: violent3dShake 0.06s linear infinite;
   will-change: transform, filter;
 }
 
-/* Staggered sub-element twitching */
+
 .crash-shake * {
   animation: childGlitch 0.05s ease-in-out infinite alternate;
   will-change: transform;
@@ -440,7 +437,6 @@ body.crash-out #ball {
   100% { transform: translate(2px, 2px) rotate(0.5deg); }
 }
 
-/* 3. RGB CHROMATIC ABERRATION SPLIT */
 .crash-chromatic {
   position: relative;
 }
@@ -497,7 +493,7 @@ body.crash-out #ball {
   100% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
 }
 
-/* 5. TEXT CORRUPTION & SPLIT SHATTER */
+
 .crash-text-shatter {
   position: relative;
   display: inline-block;
@@ -571,9 +567,7 @@ body.crash-out .card::before,
   }
 }
 
-/* 7. FULLSCREEN CRT OVERLAY & STROBE LAYERS */
 
-/* Hide overlay elements by default */
 .crash-crt-overlay,
 .crash-strobe-layer {
   display: none;
@@ -582,7 +576,7 @@ body.crash-out .card::before,
   inset: 0;
 }
 
-/* Activate CRT Overlay when crashing out */
+
 body.crash-out .crash-crt-overlay {
   display: block;
   z-index: 9999;
@@ -594,7 +588,7 @@ body.crash-out .crash-crt-overlay {
   animation: crtFlicker 0.03s infinite;
 }
 
-/* Activate Strobe Layer when crashing out */
+
 body.crash-out .crash-strobe-layer {
   display: block;
   z-index: 9998;
