@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Magic 8 Ball</title>
+    <link rel="icon" type="image/x-icon" href="eightball (1).png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
@@ -46,7 +47,7 @@
         <div class="col-md-4">
           <div class="card step-card h-100">
             <div class="card-body">
-              <span class="step-number">2</span>
+              <span class="step-number2">2</span>
               <h3 class="h5 mt-3">Ask a question</h3>
               <p class="mb-0">Placeholder text. Explain this step for your users.</p>
             </div>
@@ -55,7 +56,7 @@
         <div class="col-md-4">
           <div class="card step-card h-100">
             <div class="card-body">
-              <span class="step-number">3</span>
+              <span class="step-number3">3</span>
               <h3 class="h5 mt-3">Get your answer</h3>
               <p class="mb-0">Placeholder text. Explain this step for your users.</p>
             </div>
@@ -88,7 +89,7 @@
         <div class="label-card">
           <div class="card-body p-4 text-center">
             <p id="greeting" class="greeting">Hello!</p>
-            <p id="questionOut" class="question-out">Your question will appear here.</p>
+            <p id="questionOut" class="question-out" style="color: black;" >Your question will appear here.</p>
 
            <div class="ball" id="ball">
   <!-- Default 8 Side -->
@@ -111,6 +112,30 @@
 
     </div>
   </main>
+
+
+<!-- CRT & Strobe Screen Layers -->
+<div class="crash-crt-overlay"></div>
+<div class="crash-strobe-layer"></div>
+
+<!-- Hidden Liquid Warp Filter -->
+<svg style="display: none;">
+  <defs>
+    <filter id="crash-fluid-warp">
+      <feTurbulence type="fractalNoise" baseFrequency="0.05 0.95" numOctaves="2" result="noise">
+        <animate attributeName="baseFrequency" dur="0.1s" values="0.02 0.8;0.1 0.3;0.05 0.95" repeatCount="indefinite"/>
+      </feTurbulence>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="45" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+  </defs>
+</svg>
+
+
+
+
+
+
+
 
   <!-- ============ FOOTER ============ -->
   <footer class="site-footer py-4 text-center">

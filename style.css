@@ -1,0 +1,613 @@
+/* ==========================================
+   Magic 8 Ball: starter styles
+   Change these colors and fonts to match your theme.
+   ========================================== */
+
+:root {
+  --brand: #3b2a6b;        /* navbar, hero, button */
+  --brand-light: #ece8f6;  /* page background */
+  --accent: #f4b942;       /* step numbers, highlights */
+  --text: #1f1d2b;
+  --font: "Poppins", Arial, sans-serif;
+}
+
+
+
+
+
+
+body {
+  font-family: var(--font);
+  background: var(--brand-light);
+  color: var(--text);
+}
+
+/* ---------- Navbar ---------- */
+.site-nav {
+  background: var(--brand);
+}
+
+.site-nav .navbar-brand {
+  color: #fff;
+  font-weight: 700;
+}
+
+.nav-tagline {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.9rem;
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  background: var(--brand);
+  color: #fff;
+  padding: 3rem 0 4rem;
+}
+
+.hero h1 {
+  font-weight: 700;
+}
+
+/* ---------- How It Works ---------- */
+.section-title {
+  font-weight: 600;
+}
+
+.step-card {
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+}
+
+/* Base Pool Ball Styling */
+.step-number,
+.step-number2,
+.step-number3 {
+  position: relative;
+  isolation: isolate;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  font-family: Arial, sans-serif;
+  font-weight: 800;
+  font-size: 16px;
+  color: #111; /* Pool ball numbers are always black on the white center circle */
+  box-shadow: 
+    inset -4px -4px 8px rgba(0, 0, 0, 0.6),  /* Deep 3D shadow on bottom-right */
+    inset 2px 2px 4px rgba(255, 255, 255, 0.6),/* Specular highlight on top-left */
+    0 5px 10px rgba(0, 0, 0, 0.4);            /* Drop shadow on floor */
+  user-select: none;
+}
+
+.step-number::before,
+.step-number2::before,
+.step-number3::before {
+  content: "";
+  position: absolute;
+  width: 52%;
+  height: 52%;
+  background: #ffffff;
+  border-radius: 50%;
+  z-index: -1; /* Sits behind text, in front of ball background */
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+/* Glossy Surface Shine Overlay */
+.step-number::after,
+.step-number2::after,
+.step-number3::after {
+  content: "";
+  position: absolute;
+  top: 8%;
+  left: 18%;
+  width: 64%;
+  height: 35%;
+  border-radius: 50%;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.65) 0%, rgba(255, 255, 255, 0) 100%);
+  pointer-events: none;
+}
+
+/* 1-Ball (Yellow) */
+.step-number {
+  background: radial-gradient(circle at 35% 35%, #fff176 0%, #ffd700 50%, #b29600 100%);
+}
+
+/* 2-Ball (Blue) */
+.step-number2 {
+  background: radial-gradient(circle at 35% 35%, #5c6bc0 0%, #0000ff 50%, #00007f 100%);
+}
+
+/* 3-Ball (Red) */
+.step-number3 {
+  background: radial-gradient(circle at 35% 35%, #ef5350 0%, #ff0000 50%, #800000 100%);
+}
+
+
+
+
+
+
+
+
+
+
+/* ---------- Main cards ---------- */
+.main-card {
+  border: none;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+.label-card {
+ border: 20px solid #966F33;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  background-color: #305A4A;
+   position: relative; 
+  
+}
+/* Adds circles into the corners to make the pockets of a pool table */
+.label-card::after {
+  content: "";
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  right: -20px;
+  bottom: -20px;
+  border-radius: 16px; 
+  pointer-events: none;
+  background: 
+    radial-gradient(circle 14px at 14px 14px, #000 100%, transparent 100%),
+    radial-gradient(circle 14px at right 14px top 14px, #000 100%, transparent 100%),
+    radial-gradient(circle 14px at left 14px bottom 14px, #000 100%, transparent 100%),
+    radial-gradient(circle 14px at right 14px bottom 14px, #000 100%, transparent 100%);
+  background-repeat: no-repeat;
+}
+
+.form-label {
+  font-weight: 600;
+}
+
+.btn-ask {
+  background: var(--brand);
+  color: #fff;
+  font-weight: 600;
+  padding: 0.75rem;
+  border-radius: 10px;
+}
+
+.btn-ask:hover,
+.btn-ask:focus-visible {
+  background: var(--accent);
+  color: var(--text);
+}
+
+.btn-ask:active,
+.btn-ask:focus {
+  background: var(--brand);
+  color: #FFF;
+}
+
+/* ---------- Results ---------- */
+.greeting {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.question-out {
+  min-height: 1.5rem;
+  color: #555;
+}
+
+.ball {
+  width: 240px;
+  height: 240px;
+  margin: 1.5rem auto 0;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #4a4a4a, #111 65%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+}
+
+/* this is for the center 8 ball with the number 8 */
+.eight-circle {
+  width: 120px;
+  height: 120px;
+  margin: 1.rem auto 0;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #FFFF, #FFFF 65%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+    font-size: 60px;
+}
+
+.window {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  background: #1b2a6b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px;
+}
+
+.answer {
+  margin: 0;
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.95rem;
+  line-height: 1.25;
+}
+
+
+.answer-type span {
+  display: inline-block;
+  padding: 0.4rem 1.25rem;
+  border-radius: 999px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #fff;
+}
+
+.yes {
+  background: #2e7d32;
+}
+
+.maybe {
+  background: #b26a00;
+}
+
+.no {
+  background: #c62828;
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+  background: var(--brand);
+  color: rgba(255, 255, 255, 0.8);
+}
+
+
+.window {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #2a1548 0%, #0d051a 80%, #000000 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.8), 0 0 8px rgba(138, 43, 226, 0.3);
+  overflow: hidden;
+}
+
+
+.triangle {
+  width: 100px;
+  height: 90px;
+  background: linear-gradient(180deg, #1d2671 0%, #0e1138 100%);
+  clip-path: polygon(50% 100%, 0% 0%, 100% 0%); /* Creates upside-down triangle shape */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 10px 25px 10px;
+  text-align: center;
+  box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.15);
+  animation: float 3s ease-in-out infinite;
+}
+
+.answer {
+  margin: 0;
+  color: #d1d8ff;
+  font-weight: 700;
+  font-size: 0.75rem;
+  line-height: 1.1;
+  text-transform: uppercase;
+  text-shadow: 0 0 4px rgba(255, 255, 255, 0.5);
+}
+
+/* Subtle floating effect in liquid */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-4px) rotate(1.5deg);
+  }
+}
+
+/* Shake animation class triggered on click */
+.shake {
+  animation: shakeBall 0.6s cubic-bezier(.36,.07,.19,.97) both;
+}
+
+@keyframes shakeBall {
+  10%, 90% { transform: translate3d(-2px, 0, 0) rotate(-2deg); }
+  20%, 80% { transform: translate3d(4px, 0, 0) rotate(4deg); }
+  30%, 50%, 70% { transform: translate3d(-6px, 0, 0) rotate(-6deg); }
+  40%, 60% { transform: translate3d(6px, 0, 0) rotate(6deg); }
+}
+/* ---------- Liquid Window & Triangle Die ---------- */
+.window {
+  width: 145px;
+  height: 145px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #2a1548 0%, #0d051a 80%, #000000 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 0 0 18px rgba(0, 0, 0, 0.9), 0 0 10px rgba(138, 43, 226, 0.4);
+  overflow: hidden;
+}
+
+.triangle {
+  width: 125px;
+  height: 110px;
+  background: linear-gradient(180deg, #1d2671 0%, #0e1138 100%);
+  clip-path: polygon(50% 100%, 0% 0%, 100% 0%);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 14px;
+  text-align: center;
+  animation: float 3s ease-in-out infinite;
+}
+
+.answer {
+  margin: 0;
+  color: #e0e6ff;
+  font-weight: 700;
+  font-size: 0.65rem;
+  line-height: 1.2;
+  text-transform: uppercase;
+  max-width: 85px;
+  word-wrap: break-word;
+  text-shadow: 0 0 4px rgba(255, 255, 255, 0.4);
+}
+
+/* very valid Crashout below  */
+
+body.crash-out {
+  background-color: #500000 !important;
+  color: #ffffff !important;
+  transition: background-color 0.2s ease-in-out;
+  overflow: hidden; /* Prevents scrollbars during screen displacement */
+  perspective: 600px;
+  transform-style: preserve-3d;
+}
+
+body.crash-out .card, 
+body.crash-out #ball {
+  border-color: #ff0000 !important;
+  box-shadow: 0 0 35px #ff0000, inset 0 0 15px #ff0000 !important;
+  filter: url('#crash-fluid-warp') contrast(200%) drop-shadow(0 0 25px #ff0000) !important;
+}
+
+
+.crash-shake {
+  animation: violent3dShake 0.06s linear infinite;
+  will-change: transform, filter;
+}
+
+
+.crash-shake * {
+  animation: childGlitch 0.05s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+@keyframes violent3dShake {
+  0% {
+    transform: perspective(400px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) translate3d(0, 0, 0) scale(1);
+    filter: contrast(100%) invert(0%);
+  }
+  15% {
+    transform: perspective(400px) rotateX(18deg) rotateY(-22deg) rotateZ(-12deg) translate3d(-35px, 20px, 80px) scale(1.15);
+    filter: contrast(250%) invert(100%) drop-shadow(-20px 20px 30px #00ffff);
+  }
+  35% {
+    transform: perspective(400px) rotateX(-25deg) rotateY(30deg) rotateZ(15deg) translate3d(40px, -30px, -60px) scale(0.85);
+    filter: contrast(180%) hue-rotate(90deg);
+  }
+  55% {
+    transform: perspective(400px) rotateX(30deg) rotateY(-15deg) rotateZ(-20deg) translate3d(-45px, -15px, 120px) scale(1.25);
+    filter: contrast(300%) hue-rotate(180deg) brightness(1.5);
+  }
+  75% {
+    transform: perspective(400px) rotateX(-12deg) rotateY(25deg) rotateZ(18deg) translate3d(30px, 40px, -40px) scale(0.9);
+    filter: contrast(220%) invert(80%);
+  }
+  100% {
+    transform: perspective(400px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) translate3d(0, 0, 0) scale(1);
+    filter: contrast(100%) invert(0%);
+  }
+}
+
+@keyframes childGlitch {
+  0% { transform: translate(3px, -2px) rotate(1deg); }
+  50% { transform: translate(-4px, 3px) rotate(-1.5deg); }
+  100% { transform: translate(2px, 2px) rotate(0.5deg); }
+}
+
+.crash-chromatic {
+  position: relative;
+}
+
+.crash-chromatic::before,
+.crash-chromatic::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+.crash-chromatic::before {
+  color: #00ffff;
+  text-shadow: -3px 0 #00ffff;
+  animation: rgbShiftCyan 0.04s infinite alternate ease-in-out;
+  mix-blend-mode: screen;
+}
+
+.crash-chromatic::after {
+  color: #ff0055;
+  text-shadow: 3px 0 #ff0055;
+  animation: rgbShiftRed 0.03s infinite alternate ease-in-out;
+  mix-blend-mode: screen;
+}
+
+@keyframes rgbShiftCyan {
+  0% { transform: translate(-8px, 4px) skewX(-10deg); clip-path: inset(10% 0 30% 0); }
+  50% { transform: translate(12px, -6px) skewX(15deg); clip-path: inset(50% 0 10% 0); }
+  100% { transform: translate(-15px, 2px) skewX(-5deg); clip-path: inset(20% 0 60% 0); }
+}
+
+@keyframes rgbShiftRed {
+  0% { transform: translate(10px, -5px) skewY(8deg); clip-path: inset(40% 0 20% 0); }
+  50% { transform: translate(-14px, 8px) skewY(-12deg); clip-path: inset(15% 0 70% 0); }
+  100% { transform: translate(6px, -10px) skewY(4deg); clip-path: inset(60% 0 5% 0); }
+}
+
+/* 4. SCREEN TEARING & HORIZONTAL SLICE MATRIX */
+.crash-tear {
+  animation: screenTear 0.09s -s(1) infinite;
+}
+
+@keyframes screenTear {
+  0% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
+  20% { clip-path: polygon(0 15%, 100% 15%, 100% 30%, 0 30%); transform: translate(-30px, 0) scaleX(1.1); }
+  40% { clip-path: polygon(0 45%, 100% 45%, 100% 55%, 0 55%); transform: translate(35px, 0) skewX(-20deg); }
+  60% { clip-path: polygon(0 70%, 100% 70%, 100% 85%, 0 85%); transform: translate(-25px, 0) scaleY(1.2); }
+  80% { clip-path: polygon(0 5%, 100% 5%, 100% 25%, 0 25%); transform: translate(40px, 0) skewY(10deg); }
+  100% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
+}
+
+
+.crash-text-shatter {
+  position: relative;
+  display: inline-block;
+}
+
+.crash-text-shatter::before,
+.crash-text-shatter::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+}
+
+.crash-text-shatter::before {
+  top: 0;
+  height: 50%;
+  text-shadow: 2px 0 #ff0000;
+  animation: topShatter 0.08s infinite alternate;
+}
+
+.crash-text-shatter::after {
+  bottom: 0;
+  height: 50%;
+  text-shadow: -2px 0 #00ffff;
+  animation: bottomShatter 0.05s infinite alternate;
+}
+
+@keyframes topShatter {
+  0% { transform: translate(-5px, -2px); }
+  100% { transform: translate(7px, 1px) skewX(12deg); }
+}
+
+@keyframes bottomShatter {
+  0% { transform: translate(6px, 2px); }
+  100% { transform: translate(-8px, -1px) skewX(-15deg); }
+}
+
+/* 6. DYNAMIC CSS SPARK EXPLOSIONS */
+body.crash-out .card::before,
+.crash-sparks::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  pointer-events: none;
+  animation: cssSparkExplosion 0.1s linear infinite;
+}
+
+@keyframes cssSparkExplosion {
+  0% {
+    box-shadow: 0 0 0 #fff, 0 0 0 #ff0000, 0 0 0 #00ffff;
+  }
+  50% {
+    box-shadow: 
+      -80px -60px 12px #ff0000,
+      90px 70px 8px #00ffff,
+      -110px 40px 15px #ffffff,
+      70px -90px 10px #ff0055,
+      -50px 120px 6px #ffff00;
+  }
+  100% {
+    box-shadow: 
+      -140px -110px 0 opacity(0),
+      150px 130px 0 opacity(0),
+      -180px 70px 0 opacity(0),
+      120px -150px 0 opacity(0);
+  }
+}
+
+
+.crash-crt-overlay,
+.crash-strobe-layer {
+  display: none;
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+}
+
+
+body.crash-out .crash-crt-overlay {
+  display: block;
+  z-index: 9999;
+  background: 
+    linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.4) 50%),
+    linear-gradient(90deg, rgba(255, 0, 0, 0.08), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.08));
+  background-size: 100% 3px, 6px 100%;
+  box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.9);
+  animation: crtFlicker 0.03s infinite;
+}
+
+
+body.crash-out .crash-strobe-layer {
+  display: block;
+  z-index: 9998;
+  background: radial-gradient(circle, #ffffff 0%, #ff0000 80%);
+  mix-blend-mode: color-dodge;
+  opacity: 0;
+  animation: violentStrobe 0.12s infinite steps(2);
+}
+
+@keyframes crtFlicker {
+  0% { opacity: 0.85; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.002); }
+  100% { opacity: 0.9; transform: scale(0.998); }
+}
+
+@keyframes violentStrobe {
+  0% { opacity: 0; }
+  25% { opacity: 0.7; transform: rotate(180deg) scale(1.2); }
+  50% { opacity: 0; }
+  75% { opacity: 0.9; filter: invert(100%); }
+  100% { opacity: 0; }
+}
