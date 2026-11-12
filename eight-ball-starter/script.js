@@ -3,7 +3,7 @@
 */
 
 function askEightBall() {
-  // 1. Get DOM elements and input values
+  
   const nameInput = document.getElementById('nameInput').value.trim();
   const userQuestion = document.getElementById('questionInput').value.trim();
   const greetingEl = document.getElementById('greeting');
